@@ -1,0 +1,14 @@
+<button
+  class="btn"
+  [class.btn-default]="options.type === 'default'"
+  [class.btn-primary]="options.type === 'primary'"
+  [class.btn-success]="options.type === 'success'"
+  [class.btn-info]="options.type === 'info'"
+  [class.btn-warning]="options.type === 'warning'"
+  [class.btn-danger]="options.type === 'danger'"
+  [class.btn-lg]="options.size === 'L'"
+  [class.btn-sm]="options.size === 'S'"
+  [class.btn-xs]="options.size === 'XS'"
+  [class.active]="options.active"
+  [attr.disabled]="options.disabled"
+  type="button"><ng-content></ng-content></button>

@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" 
+                class="navbar-toggle"
+                data-toggle="collapse"
+                data-target="#navbar" 
+                aria-controls="navbar"
+                [class.collapsed]="!isExpanded"
+                [attr.aria-expanded]="isExpanded"
+                (click)="toggleNavbar()">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Example</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" [class.in]="isExpanded">
+            <ul class="nav navbar-nav">
+                <li><a href="#" (click)="selectItem(1)">Home</a></li>
+                <li class="dropdown" [class.open]="isDropdownSelected">
+                    <a href="#" (click)="isDropdownSelected = !isDropdownSelected" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" [attr.aria-expanded]="isOpen">Options <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a (click)="selectItem(2)">One</a></li>
+                        <li><a (click)="selectItem(3)">Two</a></li>
+                        <li class="divider" role="separator"></li>
+                        <li><a (click)="selectItem(4)">Three</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">... <span class="sr-only">(current)</span></a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+</nav>
