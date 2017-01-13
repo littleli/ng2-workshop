@@ -8,14 +8,14 @@ import { ExchangeRatesService} from '../exchange-rates.service';
   styleUrls: ['./exchange-rates.component.css']
 })
 export class ExchangeRatesComponent implements OnInit {
-  rates = []; 
-  
+  rates = [];
+
   constructor(private rateSrv: ExchangeRatesService) { }
 
   ngOnInit() {
     this.rateSrv.fetchRates()
       .subscribe(
         rates => this.rates = rates
-      )
+      );
   }
 }
